@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	discount, err := q1.CalculateDiscount(1500, []float64{1200, 1000, 600, 500})
+	discount, err := q1.CalculateDiscount(1500, []float64{800, 1200, 700, 1500})
 	fmt.Printf("Q1:\tdiscount: %f,\terr: %v\n", discount, err)
 
 	averageLettersPerWord, err := q2.AverageLettersPerWord("Olá, meu nome é Gopher!")
