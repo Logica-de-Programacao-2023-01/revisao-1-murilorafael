@@ -20,7 +20,7 @@ func main() {
 	min, max, avg, err := q3.FindMinMaxAverage([]int{1, 2, 3, 4, 5})
 	fmt.Printf("Q3:\tmin: %d,\tmax: %d,\tavg: %f,\terr: %v\n", min, max, avg, err)
 
-	price, err := q4.CalculateFinalPrice(100, "SP", 1)
+	price, err := q4.CalculateFinalPrice(100, "MG", 3)
 	fmt.Printf("Q4:\tprice: %f,\terr: %v\n", price, err)
 
 	temperature, err := q5.ConvertTemperature(100, "C", "F")
