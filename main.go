@@ -26,6 +26,6 @@ func main() {
 	temperature, err := q5.ConvertTemperature(0, "C", "F")
 	fmt.Printf("Q5:\ttemperature: %f,\terr: %v\n", temperature, err)
 
-	damage, err := bonus.CalculateDamage(100, 100)
+	damage, err := bonus.CalculateDamage(50, 50)
 	fmt.Printf("Bonus:\tdamage: %d,\terr: %v\n", damage, err)
 }
