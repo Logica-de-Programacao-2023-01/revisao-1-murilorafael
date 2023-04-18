@@ -14,16 +14,16 @@ func main() {
 	discount, err := q1.CalculateDiscount(1500, []float64{800, 1200, 700, 1500})
 	fmt.Printf("Q1:\tdiscount: %f,\terr: %v\n", discount, err)
 
-	averageLettersPerWord, err := q2.AverageLettersPerWord("Olá, meu nome é Gopher!")
+	averageLettersPerWord, err := q2.AverageLettersPerWord("O rato roeu a roupa do rei de roma")
 	fmt.Printf("Q2:\taverageLettersPerWord: %f,\terr: %v\n", averageLettersPerWord, err)
 
 	min, max, avg, err := q3.FindMinMaxAverage([]int{1, 2, 3, 4, 5})
 	fmt.Printf("Q3:\tmin: %d,\tmax: %d,\tavg: %f,\terr: %v\n", min, max, avg, err)
 
-	price, err := q4.CalculateFinalPrice(100, "MG", 3)
+	price, err := q4.CalculateFinalPrice(100, "SP", 1)
 	fmt.Printf("Q4:\tprice: %f,\terr: %v\n", price, err)
 
-	temperature, err := q5.ConvertTemperature(100, "C", "F")
+	temperature, err := q5.ConvertTemperature(0, "C", "F")
 	fmt.Printf("Q5:\ttemperature: %f,\terr: %v\n", temperature, err)
 
 	damage, err := bonus.CalculateDamage(100, 100)
