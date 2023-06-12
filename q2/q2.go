@@ -1,28 +1,42 @@
 package q2
 
 import (
-	"fmt"
+	"errors"
 	"strings"
+	"unicode"
 )
 
-func AverageLettersPerWord(text string) (float64, error) {
-	if text == "" {
-		return 0, fmt.Errorf("texto vazio")
+func CalcularMediaLetrasPorPalavra(texto string) (float64, error) {
+	palavras := strings.Fields(texto)
+	numPalavras := len(palavras)
+	if numPalavras == 0 {
+		return 0, errors.New("texto vazio")
 	}
 
-	words := strings.Fields(text)
-	numWords := len(words)
-
-	if numWords == 0 {
-		return 0, fmt.Errorf("texto vazio")
+	totalLetras := 0
+	numPalavrasComLetras := 0
+	for _, palavra := range palavras {
+		numLetras := contarLetras(palavra)
+		if numLetras > 0 {
+			totalLetras += numLetras
+			numPalavrasComLetras++
+		}
 	}
 
-	totalLetters := 0
-
-	for _, word := range words {
-		totalLetters += len(word)
+	if numPalavrasComLetras == 0 {
+		return 0, errors.New("não há palavras com letras no texto")
 	}
 
-	average := float64(totalLetters) / float64(numWords)
-	return average, nil
+	media := float64(totalLetras) / float64(numPalavrasComLetras)
+	return media, nil
+}
+
+func contarLetras(palavra string) int {
+	numLetras := 0
+	for _, char := range palavra {
+		if unicode.IsLetter(char) {
+			numLetras++
+		}
+	}
+	return numLetras
 }

@@ -70,13 +70,13 @@ func TestAverageLettersPerWord(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := AverageLettersPerWord(tt.text)
+			got, err := CalcularMediaLetrasPorPalavra(tt.text)
 			if (err != nil) != tt.wantErr {
-				t.Errorf("AverageLettersPerWord() error = %v, wantErr %v", err, tt.wantErr)
+				t.Errorf("CalcularMediaLetrasPorPalavra() error = %v, wantErr %v", err, tt.wantErr)
 				return
 			}
 			if !utils.AssertFloatWithPrecision(tt.want, got, 1e-2) {
-				t.Errorf("AverageLettersPerWord() = %v, want %v", got, tt.want)
+				t.Errorf("CalcularMediaLetrasPorPalavra() = %v, want %v", got, tt.want)
 			}
 		})
 	}
